@@ -1,0 +1,96 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Uzum Market - Online Shopping</title>
+    <link rel="stylesheet" href="{% static 'apps/css/styles.css' %}">
+</head>
+<body>
+    <!-- Header Utility Strip -->
+    <div class="header-utility">
+        <div class="container">
+            <div class="header-utility__content">
+                <div class="header-utility__left">
+                    <span class="header-utility__city">📍 Tashkent</span>
+                    <a href="#" class="header-utility__link">Support</a>
+                </div>
+                <div class="header-utility__right">
+                    <span class="header-utility__lang">EN / UZ</span>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Main Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <div class="header__logo">
+                    <a href="{% url 'main-page' %}">Uzum Market</a>
+                </div>
+
+                <div class="header__search">
+                    <input type="text" placeholder="Search products..." class="search-input">
+                    <button class="search-btn">🔍</button>
+                </div>
+
+                <nav class="header__nav">
+                    <a href="{% url 'main-page' %}" class="nav-link nav-link--active">Home</a>
+                    <a href="{% url 'catalog-page' %}" class="nav-link">Catalog</a>
+                    <a href="{% url 'deals-page' %}" class="nav-link">Deals</a>
+                    <a href="{% url 'cart-page' %}" class="nav-link">Cart</a>
+                    <a href="{% url 'profile-page' %}" class="nav-link">Profile</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+{% block context %}
+
+
+{% endblock %}
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__section">
+                    <h3 class="footer__title">Customer Service</h3>
+                    <ul class="footer__links">
+                        <li><a href="#">Help Center</a></li>
+                        <li><a href="#">Returns</a></li>
+                        <li><a href="#">Shipping Info</a></li>
+                        <li><a href="#">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">About</h3>
+                    <ul class="footer__links">
+                        <li><a href="#">About Us</a></li>
+                        <li><a href="#">Careers</a></li>
+                        <li><a href="#">Press</a></li>
+                        <li><a href="#">Investors</a></li>
+                    </ul>
+                </div>
+                <div class="footer__section">
+                    <h3 class="footer__title">Follow Us</h3>
+                    <div class="footer__social">
+                        <span>Facebook</span>
+                        <span>Instagram</span>
+                        <span>Telegram</span>
+                        <span>YouTube</span>
+                    </div>
+                </div>
+            </div>
+            <div class="footer__bottom">
+                <p>&copy; 2024 Uzum Market. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>
+
+

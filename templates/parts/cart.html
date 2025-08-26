@@ -1,0 +1,146 @@
+{% extends 'base.html' %}
+
+
+{% block context %}
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb__nav">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb__separator">></span>
+                <span class="breadcrumb__current">Shopping Cart</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="cart">
+                <h1 class="cart__title">Shopping Cart</h1>
+                
+                <div class="cart__content">
+                    <!-- Cart Items -->
+                    <div class="cart__items">
+                        <div class="cart-item">
+                            <div class="cart-item__image">
+                                <img src="images/samsung-galaxy-a54.png" alt="Samsung Galaxy A54">
+                            </div>
+                            <div class="cart-item__details">
+                                <h3 class="cart-item__title">Samsung Galaxy A54 5G 128GB</h3>
+                                <div class="cart-item__variant">Color: Awesome Black, Storage: 128GB</div>
+                                <div class="cart-item__price">
+                                    <span class="price-current">4,500,000 UZS</span>
+                                    <span class="price-old">6,000,000 UZS</span>
+                                </div>
+                            </div>
+                            <div class="cart-item__quantity">
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn quantity-btn--minus">-</button>
+                                    <input type="number" value="1" min="1" class="quantity-input">
+                                    <button class="quantity-btn quantity-btn--plus">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item__total">
+                                <span class="cart-item__total-price">4,500,000 UZS</span>
+                                <button class="cart-item__remove">🗑️</button>
+                            </div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-item__image">
+                                <img src="images/nike-air-max.png" alt="Nike Air Max 270">
+                            </div>
+                            <div class="cart-item__details">
+                                <h3 class="cart-item__title">Nike Air Max 270 Running Sneakers</h3>
+                                <div class="cart-item__variant">Size: 42, Color: Black/White</div>
+                                <div class="cart-item__price">
+                                    <span class="price-current">850,000 UZS</span>
+                                    <span class="price-old">1,000,000 UZS</span>
+                                </div>
+                            </div>
+                            <div class="cart-item__quantity">
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn quantity-btn--minus">-</button>
+                                    <input type="number" value="2" min="1" class="quantity-input">
+                                    <button class="quantity-btn quantity-btn--plus">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item__total">
+                                <span class="cart-item__total-price">1,700,000 UZS</span>
+                                <button class="cart-item__remove">🗑️</button>
+                            </div>
+                        </div>
+
+                        <div class="cart-item">
+                            <div class="cart-item__image">
+                                <img src="images/loreal-skincare.png" alt="L'Oreal Skincare Set">
+                            </div>
+                            <div class="cart-item__details">
+                                <h3 class="cart-item__title">L'Oreal Paris Complete Skincare Set</h3>
+                                <div class="cart-item__variant">Type: Anti-Aging</div>
+                                <div class="cart-item__price">
+                                    <span class="price-current">180,000 UZS</span>
+                                </div>
+                            </div>
+                            <div class="cart-item__quantity">
+                                <div class="quantity-selector">
+                                    <button class="quantity-btn quantity-btn--minus">-</button>
+                                    <input type="number" value="1" min="1" class="quantity-input">
+                                    <button class="quantity-btn quantity-btn--plus">+</button>
+                                </div>
+                            </div>
+                            <div class="cart-item__total">
+                                <span class="cart-item__total-price">180,000 UZS</span>
+                                <button class="cart-item__remove">🗑️</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cart Summary -->
+                    <div class="cart__summary">
+                        <div class="cart-summary">
+                            <h2 class="cart-summary__title">Order Summary</h2>
+                            
+                            <div class="cart-summary__line">
+                                <span>Subtotal (4 items)</span>
+                                <span>6,380,000 UZS</span>
+                            </div>
+                            
+                            <div class="cart-summary__line">
+                                <span>Delivery</span>
+                                <span class="cart-summary__free">Free</span>
+                            </div>
+                            
+                            <div class="cart-summary__line cart-summary__line--discount">
+                                <span>Discount</span>
+                                <span>-1,150,000 UZS</span>
+                            </div>
+                            
+                            <div class="cart-summary__divider"></div>
+                            
+                            <div class="cart-summary__line cart-summary__line--total">
+                                <span>Total</span>
+                                <span>6,380,000 UZS</span>
+                            </div>
+
+                            <div class="cart-summary__promo">
+                                <input type="text" placeholder="Enter promo code" class="promo-input">
+                                <button class="btn btn--secondary btn--small">Apply</button>
+                            </div>
+
+                            <button class="btn btn--primary btn--large btn--full">Proceed to Checkout</button>
+                            
+                            <div class="cart-summary__continue">
+                                <a href="catalog.html" class="continue-shopping">← Continue Shopping</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+
+{% endblock %}

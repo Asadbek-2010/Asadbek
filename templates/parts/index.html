@@ -1,0 +1,280 @@
+{% extends 'base.html' %}
+
+
+{% block context %}
+
+    <!-- Updated main content to remove header and footer, keeping only page-specific content -->
+    <main>
+        <!-- Hero Banner -->
+        <section class="hero">
+            <div class="container">
+                <div class="hero__content">
+                    <h1 class="hero__title">Welcome to Uzum Market</h1>
+                    <p class="hero__subtitle">Discover amazing products at unbeatable prices</p>
+                    <a href="{% url 'catalog-page' %}" class="btn btn--primary btn--large">Shop Now</a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Categories -->
+        <section class="categories">
+            <div class="container">
+                <h2 class="section-title">Shop by Category</h2>
+                <div class="categories-grid">
+                    <a href="{% url 'catalog-page' %}" class="category-tile">
+                        <div class="category-tile__icon">📱</div>
+                        <h3 class="category-tile__title">Electronics</h3>
+                        <p class="category-tile__count">1,234 items</p>
+                    </a>
+                    
+                    <a href="{% url 'catalog-page' %}" class="category-tile">
+                        <div class="category-tile__icon">👕</div>
+                        <h3 class="category-tile__title">Fashion</h3>
+                        <p class="category-tile__count">856 items</p>
+                    </a>
+                    
+                    <a href="{% url 'catalog-page' %}" class="category-tile">
+                        <div class="category-tile__icon">🏠</div>
+                        <h3 class="category-tile__title">Home & Garden</h3>
+                        <p class="category-tile__count">567 items</p>
+                    </a>
+                    
+                    <a href="{% url 'catalog-page' %}" class="category-tile">
+                        <div class="category-tile__icon">💄</div>
+                        <h3 class="category-tile__title">Beauty</h3>
+                        <p class="category-tile__count">234 items</p>
+                    </a>
+                    
+                    <a href="{% url 'catalog-page' %}" class="category-tile">
+                        <div class="category-tile__icon">🧸</div>
+                        <h3 class="category-tile__title">Kids</h3>
+                        <p class="category-tile__count">345 items</p>
+                    </a>
+                    
+                    <a href="{% url 'catalog-page' %}" class="category-tile">
+                        <div class="category-tile__icon">🛒</div>
+                        <h3 class="category-tile__title">Grocery</h3>
+                        <p class="category-tile__count">789 items</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Top Deals -->
+        <section class="deals">
+            <div class="container">
+                <div class="section-header">
+                    <h2 class="section-title">Top Deals</h2>
+                    <div class="carousel-arrows">
+                        <button class="carousel-arrow carousel-arrow--prev">←</button>
+                        <button class="carousel-arrow carousel-arrow--next">→</button>
+                    </div>
+                </div>
+                
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="images/samsung-galaxy-a54.png" alt="Samsung Galaxy A54">
+                        </div>
+                        <div class="product-card__badge">-25%</div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Samsung Galaxy A54 128GB Smartphone</h3>
+                            <div class="product-card__rating">
+                                <span class="rating">★★★★☆</span>
+                                <span class="rating-count">(124)</span>
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-current">4,500,000 UZS</span>
+                                <span class="price-old">6,000,000 UZS</span>
+                            </div>
+                            <div class="product-card__tags">
+                                <span class="tag tag--delivery">Free delivery</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                <a href="{% url 'product-page' %}" class="btn btn--primary btn--small">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="images/iphone-15-pro.png" alt="iPhone 15 Pro">
+                        </div>
+                        <div class="product-card__badge badge--new">New</div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Apple iPhone 15 Pro 256GB</h3>
+                            <div class="product-card__rating">
+                                <span class="rating">★★★★★</span>
+                                <span class="rating-count">(89)</span>
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-current">18,500,000 UZS</span>
+                            </div>
+                            <div class="product-card__tags">
+                                <span class="tag tag--installment">from 1,850,000 UZS/mo</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                <a href="{% url 'product-page' %}" class="btn btn--primary btn--small">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="images/nike-air-max.png" alt="Nike Air Max 270">
+                        </div>
+                        <div class="product-card__badge">-15%</div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Nike Air Max 270 Running Sneakers</h3>
+                            <div class="product-card__rating">
+                                <span class="rating">★★★★☆</span>
+                                <span class="rating-count">(67)</span>
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-current">850,000 UZS</span>
+                                <span class="price-old">1,000,000 UZS</span>
+                            </div>
+                            <div class="product-card__tags">
+                                <span class="tag tag--delivery">Free delivery</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                <a href="{% url 'product-page' %}" class="btn btn--primary btn--small">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="images/dyson-v15.png" alt="Dyson V15 Detect">
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Dyson V15 Detect Vacuum Cleaner</h3>
+                            <div class="product-card__rating">
+                                <span class="rating">★★★★★</span>
+                                <span class="rating-count">(156)</span>
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-current">7,200,000 UZS</span>
+                            </div>
+                            <div class="product-card__tags">
+                                <span class="tag tag--installment">from 720,000 UZS/mo</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                <a href="{% url 'product-page' %}" class="btn btn--primary btn--small">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Popular in Tashkent -->
+        <section class="popular">
+            <div class="container">
+                <h2 class="section-title">Popular in Tashkent</h2>
+                <div class="product-grid">
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="images/artel-tv.png" alt="Artel Smart TV">
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Artel 55" Smart TV 4K UHD</h3>
+                            <div class="product-card__rating">
+                                <span class="rating">★★★★☆</span>
+                                <span class="rating-count">(234)</span>
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-current">5,800,000 UZS</span>
+                            </div>
+                            <div class="product-card__tags">
+                                <span class="tag tag--delivery">Free delivery</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                <a href="{% url 'product-page' %}" class="btn btn--primary btn--small">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="images/zara-coat.png" alt="Zara Winter Coat">
+                        </div>
+                        <div class="product-card__badge">-30%</div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Zara Women's Winter Coat</h3>
+                            <div class="product-card__rating">
+                                <span class="rating">★★★★☆</span>
+                                <span class="rating-count">(45)</span>
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-current">420,000 UZS</span>
+                                <span class="price-old">600,000 UZS</span>
+                            </div>
+                            <div class="product-card__tags">
+                                <span class="tag tag--delivery">Free delivery</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                <a href="{% url 'product-page' %}" class="btn btn--primary btn--small">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="images/tefal-pan.png" alt="Tefal Pan Set">
+                        </div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">Tefal Non-Stick Pan Set 3 Pieces</h3>
+                            <div class="product-card__rating">
+                                <span class="rating">★★★★★</span>
+                                <span class="rating-count">(178)</span>
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-current">320,000 UZS</span>
+                            </div>
+                            <div class="product-card__tags">
+                                <span class="tag tag--delivery">Free delivery</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                <a href="{% url 'product-page' %}" class="btn btn--primary btn--small">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="product-card">
+                        <div class="product-card__image">
+                            <img src="images/loreal-skincare.png" alt="L'Oreal Skincare Set">
+                        </div>
+                        <div class="product-card__badge badge--new">New</div>
+                        <div class="product-card__content">
+                            <h3 class="product-card__title">L'Oreal Paris Complete Skincare Set</h3>
+                            <div class="product-card__rating">
+                                <span class="rating">★★★★☆</span>
+                                <span class="rating-count">(92)</span>
+                            </div>
+                            <div class="product-card__price">
+                                <span class="price-current">180,000 UZS</span>
+                            </div>
+                            <div class="product-card__tags">
+                                <span class="tag tag--delivery">Free delivery</span>
+                            </div>
+                            <div class="product-card__actions">
+                                <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                <a href="{% url 'product-page' %}" class="btn btn--primary btn--small">Buy Now</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+
+{% endblock %}

@@ -1,0 +1,245 @@
+{% extends 'base.html' %}
+
+
+{% block context %}
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb__nav">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb__separator">></span>
+                <a href="catalog.html">Electronics</a>
+                <span class="breadcrumb__separator">></span>
+                <a href="catalog.html">Smartphones</a>
+                <span class="breadcrumb__separator">></span>
+                <span class="breadcrumb__current">Samsung Galaxy A54</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="product-detail">
+                <!-- Product Gallery -->
+                <div class="product-gallery">
+                    <div class="product-gallery__main">
+                        <div class="product-gallery__main-image">Main Product Image</div>
+                    </div>
+                    <div class="product-gallery__thumbnails">
+                        <div class="product-gallery__thumbnail product-gallery__thumbnail--active">Thumb 1</div>
+                        <div class="product-gallery__thumbnail">Thumb 2</div>
+                        <div class="product-gallery__thumbnail">Thumb 3</div>
+                        <div class="product-gallery__thumbnail">Thumb 4</div>
+                    </div>
+                </div>
+
+                <!-- Product Info -->
+                <div class="product-info">
+                    <div class="product-info__header">
+                        <h1 class="product-info__title">Samsung Galaxy A54 5G 128GB Smartphone</h1>
+                        <div class="product-info__rating">
+                            <span class="rating">★★★★☆</span>
+                            <span class="rating-count">(124 reviews)</span>
+                        </div>
+                        <div class="product-info__meta">
+                            <span class="product-info__sku">SKU: SM-A546BZKDUZB</span>
+                            <span class="product-info__availability">✓ In Stock</span>
+                        </div>
+                    </div>
+
+                    <div class="product-info__price">
+                        <div class="price-block">
+                            <span class="price-current price-current--large">4,500,000 UZS</span>
+                            <span class="price-old price-old--large">6,000,000 UZS</span>
+                            <span class="discount-badge">-25%</span>
+                        </div>
+                        <div class="installment-info">
+                            <span class="installment-text">from 450,000 UZS/month</span>
+                        </div>
+                    </div>
+
+                    <div class="product-info__delivery">
+                        <div class="delivery-badge">
+                            <span class="delivery-icon">🚚</span>
+                            <span>Free delivery tomorrow</span>
+                        </div>
+                    </div>
+
+                    <!-- Product Options -->
+                    <div class="product-options">
+                        <div class="option-group">
+                            <h3 class="option-group__title">Color</h3>
+                            <div class="color-options">
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="black" checked>
+                                    <span class="color-option__swatch" style="background-color: #000;"></span>
+                                    <span class="color-option__label">Awesome Black</span>
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="white">
+                                    <span class="color-option__swatch" style="background-color: #fff; border: 1px solid #ddd;"></span>
+                                    <span class="color-option__label">Awesome White</span>
+                                </label>
+                                <label class="color-option">
+                                    <input type="radio" name="color" value="violet">
+                                    <span class="color-option__swatch" style="background-color: #8b5cf6;"></span>
+                                    <span class="color-option__label">Awesome Violet</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <h3 class="option-group__title">Storage</h3>
+                            <div class="size-options">
+                                <label class="size-option">
+                                    <input type="radio" name="storage" value="128gb" checked>
+                                    <span class="size-option__label">128GB</span>
+                                </label>
+                                <label class="size-option">
+                                    <input type="radio" name="storage" value="256gb">
+                                    <span class="size-option__label">256GB</span>
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="option-group">
+                            <h3 class="option-group__title">Quantity</h3>
+                            <div class="quantity-selector">
+                                <button class="quantity-btn quantity-btn--minus">-</button>
+                                <input type="number" value="1" min="1" class="quantity-input">
+                                <button class="quantity-btn quantity-btn--plus">+</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Action Buttons -->
+                    <div class="product-actions">
+                        <button class="btn btn--secondary btn--large btn--full">Add to Cart</button>
+                        <button class="btn btn--primary btn--large btn--full">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Product Tabs -->
+            <div class="product-tabs">
+                <div class="product-tabs__nav">
+                    <button class="product-tabs__tab product-tabs__tab--active">Description</button>
+                    <button class="product-tabs__tab">Specifications</button>
+                    <button class="product-tabs__tab">Reviews (124)</button>
+                </div>
+
+                <div class="product-tabs__content">
+                    <div class="product-tabs__panel product-tabs__panel--active">
+                        <div class="product-description">
+                            <h3>Product Description</h3>
+                            <p>The Samsung Galaxy A54 5G combines premium design with powerful performance. Featuring a stunning 6.4-inch Super AMOLED display, versatile triple camera system, and long-lasting 5000mAh battery, this smartphone delivers exceptional value.</p>
+                            
+                            <h4>Key Features:</h4>
+                            <ul>
+                                <li>6.4" Super AMOLED Display with 120Hz refresh rate</li>
+                                <li>50MP Triple Camera System with OIS</li>
+                                <li>5000mAh Battery with 25W Fast Charging</li>
+                                <li>Exynos 1380 Processor</li>
+                                <li>IP67 Water & Dust Resistance</li>
+                                <li>Android 13 with One UI 5.1</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <div class="product-tabs__panel">
+                        <div class="product-specs">
+                            <h3>Technical Specifications</h3>
+                            <table class="specs-table">
+                                <tr>
+                                    <td>Display</td>
+                                    <td>6.4" Super AMOLED, 2340x1080, 120Hz</td>
+                                </tr>
+                                <tr>
+                                    <td>Processor</td>
+                                    <td>Exynos 1380 Octa-core</td>
+                                </tr>
+                                <tr>
+                                    <td>RAM</td>
+                                    <td>8GB</td>
+                                </tr>
+                                <tr>
+                                    <td>Storage</td>
+                                    <td>128GB/256GB (expandable up to 1TB)</td>
+                                </tr>
+                                <tr>
+                                    <td>Main Camera</td>
+                                    <td>50MP (f/1.8) + 12MP Ultra-wide + 5MP Macro</td>
+                                </tr>
+                                <tr>
+                                    <td>Front Camera</td>
+                                    <td>32MP (f/2.2)</td>
+                                </tr>
+                                <tr>
+                                    <td>Battery</td>
+                                    <td>5000mAh with 25W Fast Charging</td>
+                                </tr>
+                                <tr>
+                                    <td>OS</td>
+                                    <td>Android 13, One UI 5.1</td>
+                                </tr>
+                                <tr>
+                                    <td>Connectivity</td>
+                                    <td>5G, Wi-Fi 6, Bluetooth 5.3, NFC</td>
+                                </tr>
+                                <tr>
+                                    <td>Dimensions</td>
+                                    <td>158.2 x 76.7 x 8.2 mm</td>
+                                </tr>
+                                <tr>
+                                    <td>Weight</td>
+                                    <td>202g</td>
+                                </tr>
+                            </table>
+                        </div>
+                    </div>
+
+                    <div class="product-tabs__panel">
+                        <div class="product-reviews">
+                            <h3>Customer Reviews</h3>
+                            
+                            <div class="review-summary">
+                                <div class="review-summary__rating">
+                                    <span class="rating-large">★★★★☆</span>
+                                    <span class="rating-score">4.2 out of 5</span>
+                                </div>
+                                <div class="review-summary__count">Based on 124 reviews</div>
+                            </div>
+
+                            <div class="reviews-list">
+                                <div class="review">
+                                    <div class="review__header">
+                                        <div class="review__author">Akmal K.</div>
+                                        <div class="review__rating">★★★★★</div>
+                                        <div class="review__date">2 days ago</div>
+                                    </div>
+                                    <div class="review__content">
+                                        <p>Excellent phone for the price! The camera quality is impressive and the battery lasts all day. Very satisfied with this purchase.</p>
+                                    </div>
+                                </div>
+
+                                <div class="review">
+                                    <div class="review__header">
+                                        <div class="review__author">Dilnoza S.</div>
+                                        <div class="review__rating">★★★★☆</div>
+                                        <div class="review__date">1 week ago</div>
+                                    </div>
+                                    <div class="review__content">
+                                        <p>Good phone overall. The display is beautiful and performance is smooth. Only complaint is that it can get a bit warm during heavy usage.</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}

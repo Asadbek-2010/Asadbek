@@ -1,0 +1,150 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block context %}
+<section class="profile-wrapper">
+  <!-- User Info -->
+  <div class="profile-top">
+    <div class="profile-avatar">
+      <img src="{% static 'apps/image/avatar-placeholder.png' %}" alt="User Avatar">
+    </div>
+    <div class="profile-details">
+      <h2 class="profile-name">{{ user.first_name }} {{ user.last_name }}</h2>
+      <p class="profile-phone">{{ user.email }}</p>
+      <div class="profile-status">
+        <span class="badge gold">Gold Member</span>
+        <span class="profile-rating">⭐ 4.8</span>
+      </div>
+    </div>
+    <a href="{% url 'logging-page' %}" class="btn-edit">Logout</a>
+  </div>
+
+  <!-- Navigation Menu -->
+  <div class="profile-menu">
+    <button class="menu-item active" data-tab="orders">My Orders</button>
+    <button class="menu-item" data-tab="wishlist">Wishlist</button>
+    <button class="menu-item" data-tab="addresses">Addresses</button>
+    <button class="menu-item" data-tab="settings">Settings</button>
+  </div>
+
+  <!-- Tab Contents -->
+  <div class="tab-content">
+    <!-- Orders -->
+    <div class="tab-pane active" id="orders">
+      <h3>Recent Orders</h3>
+      <div class="order-card">
+        <div>
+          <p><strong>Order #12345</strong></p>
+          <p>15 Jan 2024</p>
+        </div>
+        <div class="order-status delivered">Delivered</div>
+        <button class="order-btn">View</button>
+      </div>
+      <div class="order-card">
+        <div>
+          <p><strong>Order #12346</strong></p>
+          <p>12 Jan 2024</p>
+        </div>
+        <div class="order-status processing">Processing</div>
+        <button class="order-btn">Track</button>
+      </div>
+    </div>
+
+    <!-- Wishlist -->
+    <div class="tab-pane" id="wishlist">
+      <h3>Wishlist</h3>
+      <div class="wishlist-item">
+        <img src="{% static 'apps/img/iphone.jpg' %}" alt="iPhone">
+        <p class="item-name">iPhone 15 Pro 256GB</p>
+        <p class="item-price">18,500,000 UZS</p>
+        <button class="btn primary">Add to Cart</button>
+      </div>
+      <div class="wishlist-item">
+        <img src="{% static 'apps/img/dyson.jpg' %}" alt="Dyson">
+        <p class="item-name">Dyson V15 Detect</p>
+        <p class="item-price">7,200,000 UZS</p>
+        <button class="btn primary">Add to Cart</button>
+      </div>
+    </div>
+
+    <!-- Addresses -->
+    <div class="tab-pane" id="addresses">
+      <h3>Saved Addresses</h3>
+      <p>No addresses yet.</p>
+      <button class="btn primary">Add New Address</button>
+    </div>
+
+    <!-- Settings -->
+    <div class="tab-pane" id="settings">
+      <h3>Profile Settings</h3>
+      <form>
+        <input type="text" placeholder="Full Name" value="{{ user.first_name }} {{ user.last_name }}">
+        <input type="email" placeholder="Email" value="{{ user.email }}">
+        <button class="btn primary">Save Changes</button>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- Styles -->
+<style>
+.profile-wrapper {max-width: 900px; margin: 30px auto; display: flex; flex-direction: column; gap: 25px;}
+.profile-top {display: flex; align-items: center; background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); position: relative;}
+.profile-avatar img {width: 80px; height: 80px; border-radius: 50%; object-fit: cover;}
+.profile-details {margin-left: 15px; flex: 1;}
+.profile-name {font-size: 20px; font-weight: 600; margin: 0;}
+.profile-phone {color: #666; margin: 4px 0;}
+.profile-status {display: flex; gap: 8px; margin-top: 6px;}
+.badge.gold {background: #FFD700; color: #333; padding: 4px 10px; border-radius: 12px; font-size: 12px;}
+.profile-rating {font-size: 14px; color: #6C63FF;}
+.btn-edit {position: absolute; top: 20px; right: 20px; background: linear-gradient(90deg,#6C63FF,#836FFF); color: #fff; padding: 8px 14px; border-radius: 8px; text-decoration: none; transition: 0.3s;}
+.btn-edit:hover {opacity: 0.9;}
+
+/* Menu */
+.profile-menu {display: grid; grid-template-columns: repeat(auto-fit,minmax(120px,1fr)); gap: 10px;}
+.menu-item {background: #fff; padding: 12px; text-align: center; border-radius: 8px; font-size: 14px; color: #333; border: none; cursor: pointer; transition: 0.3s;}
+.menu-item:hover {background: #6C63FF; color: #fff;}
+.menu-item.active {background: #6C63FF; color: #fff;}
+
+/* Tabs */
+.tab-content {background: #fff; padding: 20px; border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05);}
+.tab-pane {display: none;}
+.tab-pane.active {display: block;}
+
+/* Orders */
+.order-card {display: flex; justify-content: space-between; align-items: center; background: #f9f9f9; padding: 15px; border-radius: 8px; margin-bottom: 10px;}
+.order-status {padding: 6px 10px; border-radius: 12px; font-size: 12px; font-weight: bold; text-transform: capitalize;}
+.order-status.delivered {background: #d4f8d4; color: #2e7d32;}
+.order-status.processing {background: #fff3cd; color: #856404;}
+.order-btn {background: linear-gradient(90deg,#6C63FF,#836FFF); color: #fff; padding: 6px 12px; border-radius: 6px; border: none; cursor: pointer;}
+.order-btn:hover {opacity: 0.9;}
+
+/* Wishlist */
+.wishlist-item {display: inline-block; width: 45%; background: #f9f9f9; padding: 10px; margin: 10px; border-radius: 8px; text-align: center;}
+.wishlist-item img {width: 100px; height: 100px; object-fit: cover;}
+.item-name {font-size: 14px; margin: 8px 0;}
+.item-price {color: #6C63FF; font-weight: bold;}
+.btn.primary {background: linear-gradient(90deg,#6C63FF,#836FFF); color: #fff; padding: 8px 14px; border: none; border-radius: 8px; cursor: pointer;}
+.btn.primary:hover {opacity: 0.9;}
+
+/* Form */
+form input {display: block; width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ccc; border-radius: 6px;}
+
+@media(max-width:600px){
+.profile-top {flex-direction: column; text-align: center;}
+.profile-details {margin-left: 0; margin-top: 10px;}
+.btn-edit {position: static; margin-top: 10px;}
+}
+</style>
+
+<!-- JavaScript -->
+<script>
+document.querySelectorAll('.menu-item').forEach(btn=>{
+    btn.addEventListener('click',()=>{
+        document.querySelectorAll('.menu-item').forEach(b=>b.classList.remove('active'));
+        document.querySelectorAll('.tab-pane').forEach(tab=>tab.classList.remove('active'));
+        btn.classList.add('active');
+        document.getElementById(btn.dataset.tab).classList.add('active');
+    });
+});
+</script>
+{% endblock %}

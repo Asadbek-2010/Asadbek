@@ -1,0 +1,221 @@
+{% extends 'base.html' %}
+
+{% block content %}
+<style>
+    .deal-tabs {
+        display: flex;
+        justify-content: center;
+        gap: 10px;
+        margin: 20px 0;
+    }
+    .deal-tab {
+        padding: 10px 20px;
+        border: none;
+        background: #f1f1f1;
+        cursor: pointer;
+        border-radius: 6px;
+        font-weight: 600;
+        transition: 0.3s;
+    }
+    .deal-tab--active {
+        background: #ff4d4d;
+        color: white;
+    }
+    .product-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+        gap: 20px;
+        margin-top: 20px;
+    }
+    .product-card {
+        border: 1px solid #ddd;
+        border-radius: 8px;
+        padding: 10px;
+        text-align: center;
+        transition: 0.3s;
+        background: #fff;
+    }
+    .product-card:hover {
+        box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    }
+    .product-card__image img {
+        width: 100%;
+        height: auto;
+        max-height: 180px;
+        object-fit: contain;
+    }
+    .product-card__title {
+        font-size: 16px;
+        font-weight: 600;
+        margin: 10px 0;
+    }
+    .product-card__price {
+        font-size: 14px;
+        color: #ff4d4d;
+        font-weight: bold;
+    }
+    .product-card__old-price {
+        text-decoration: line-through;
+        font-size: 12px;
+        color: #888;
+        margin-left: 5px;
+    }
+    .product-card__actions button {
+        margin-top: 10px;
+        padding: 8px 12px;
+        background: #ff4d4d;
+        color: white;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+    }
+    .deal-section {
+        display: none;
+    }
+    .deal-section.active {
+        display: block;
+    }
+</style>
+
+<main>
+    <div class="container">
+        <!-- Deal Tabs -->
+        <div class="deal-tabs">
+            <button class="deal-tab deal-tab--active" onclick="showSection('flash-sale')">Flash Sale</button>
+            <button class="deal-tab" onclick="showSection('daily-deals')">Daily Deals</button>
+            <button class="deal-tab" onclick="showSection('weekly-deals')">Weekly Specials</button>
+            <button class="deal-tab" onclick="showSection('clearance')">Clearance</button>
+        </div>
+
+        <!-- Flash Sale -->
+        <section id="flash-sale" class="deal-section active">
+            <h2>⚡ Flash Sale - Up to 70% Off</h2>
+            <div class="product-grid">
+                {% if flash_deals %}
+                    {% for product in flash_deals %}
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">{{ product.name }}</h3>
+                                <div class="product-card__price">
+                                    {{ product.price }} UZS
+                                    {% if product.old_price %}
+                                        <span class="product-card__old-price">{{ product.old_price }} UZS</span>
+                                    {% endif %}
+                                </div>
+                                <div class="product-card__actions">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No flash sale products available</p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Daily Deals -->
+        <section id="daily-deals" class="deal-section">
+            <h2>📅 Today's Best Deals</h2>
+            <div class="product-grid">
+                {% if daily_deals %}
+                    {% for product in daily_deals %}
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">{{ product.name }}</h3>
+                                <div class="product-card__price">
+                                    {{ product.price }} UZS
+                                    {% if product.old_price %}
+                                        <span class="product-card__old-price">{{ product.old_price }} UZS</span>
+                                    {% endif %}
+                                </div>
+                                <div class="product-card__actions">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No daily deals available</p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Weekly Specials -->
+        <section id="weekly-deals" class="deal-section">
+            <h2>📦 Weekly Specials</h2>
+            <div class="product-grid">
+                {% if weekly_deals %}
+                    {% for product in weekly_deals %}
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">{{ product.name }}</h3>
+                                <div class="product-card__price">
+                                    {{ product.price }} UZS
+                                    {% if product.old_price %}
+                                        <span class="product-card__old-price">{{ product.old_price }} UZS</span>
+                                    {% endif %}
+                                </div>
+                                <div class="product-card__actions">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No weekly deals available</p>
+                {% endif %}
+            </div>
+        </section>
+
+        <!-- Clearance -->
+        <section id="clearance" class="deal-section">
+            <h2>🛒 Clearance Sale</h2>
+            <div class="product-grid">
+                {% if clearance_deals %}
+                    {% for product in clearance_deals %}
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="{{ product.image.url }}" alt="{{ product.name }}">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">{{ product.name }}</h3>
+                                <div class="product-card__price">
+                                    {{ product.price }} UZS
+                                    {% if product.old_price %}
+                                        <span class="product-card__old-price">{{ product.old_price }} UZS</span>
+                                    {% endif %}
+                                </div>
+                                <div class="product-card__actions">
+                                    <button>Add to Cart</button>
+                                </div>
+                            </div>
+                        </div>
+                    {% endfor %}
+                {% else %}
+                    <p>No clearance products available</p>
+                {% endif %}
+            </div>
+        </section>
+    </div>
+</main>
+
+<script>
+    function showSection(sectionId) {
+        document.querySelectorAll('.deal-section').forEach(sec => sec.classList.remove('active'));
+        document.getElementById(sectionId).classList.add('active');
+
+        document.querySelectorAll('.deal-tab').forEach(tab => tab.classList.remove('deal-tab--active'));
+        event.target.classList.add('deal-tab--active');
+    }
+</script>
+{% endblock %}

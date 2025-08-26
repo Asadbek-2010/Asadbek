@@ -1,0 +1,31 @@
+{% extends 'base.html' %}
+
+{% block context %}
+<div class="auth-container">
+  <h2>Login</h2>
+  <form>
+    <input type="text" placeholder="Phone number or Email" required>
+    <input type="password" placeholder="Password" required>
+    <button type="submit">Login</button>
+  </form>
+  <p>Don't have an account? <a href="/register">Register</a></p>
+</div>
+
+<style>
+.auth-container {
+  max-width: 400px; margin: 100px auto; background: #fff; padding: 30px;
+  border-radius: 12px; box-shadow: 0 2px 8px rgba(0,0,0,0.05); text-align: center;
+}
+.auth-container h2 {margin-bottom: 20px; color: #333;}
+.auth-container input {
+  width: 100%; padding: 12px; margin-bottom: 15px; border: 1px solid #ccc;
+  border-radius: 8px; font-size: 14px;
+}
+.auth-container button {
+  width: 100%; padding: 12px; background: linear-gradient(90deg,#6C63FF,#836FFF);
+  color: #fff; border: none; border-radius: 8px; font-size: 16px; cursor: pointer;
+}
+.auth-container p {margin-top: 15px; font-size: 14px;}
+.auth-container a {color: #6C63FF; text-decoration: none; font-weight: bold;}
+</style>
+{% endblock %}

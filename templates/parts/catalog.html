@@ -1,0 +1,352 @@
+{% extends 'base.html' %}
+
+
+{% block context %}
+
+    <!-- Breadcrumb -->
+    <div class="breadcrumb">
+        <div class="container">
+            <nav class="breadcrumb__nav">
+                <a href="index.html">Home</a>
+                <span class="breadcrumb__separator">></span>
+                <span class="breadcrumb__current">All Products</span>
+            </nav>
+        </div>
+    </div>
+
+    <!-- Main Content -->
+    <main class="main">
+        <div class="container">
+            <div class="catalog">
+                <!-- Sidebar Filters -->
+                <aside class="catalog__sidebar">
+                    <div class="filters">
+                        <h2 class="filters__title">Filters</h2>
+                        
+                        <div class="filter-group">
+                            <h3 class="filter-group__title">Category</h3>
+                            <div class="filter-group__content">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    Electronics (1,234)
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    Fashion (856)
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    Home & Garden (567)
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    Beauty (234)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-group__title">Brand</h3>
+                            <div class="filter-group__content">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    Samsung (345)
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    Apple (234)
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    Nike (156)
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    Artel (89)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-group__title">Price Range</h3>
+                            <div class="filter-group__content">
+                                <div class="price-range">
+                                    <input type="number" placeholder="Min" class="price-input">
+                                    <span class="price-separator">-</span>
+                                    <input type="number" placeholder="Max" class="price-input">
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-group__title">Rating</h3>
+                            <div class="filter-group__content">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    ★★★★★ & up (234)
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    ★★★★☆ & up (567)
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="filter-group">
+                            <h3 class="filter-group__title">Delivery</h3>
+                            <div class="filter-group__content">
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    Today (45)
+                                </label>
+                                <label class="checkbox">
+                                    <input type="checkbox">
+                                    <span class="checkbox__mark"></span>
+                                    2-3 days (234)
+                                </label>
+                            </div>
+                        </div>
+                    </div>
+                </aside>
+
+                <!-- Main Content Area -->
+                <div class="catalog__content">
+                    <!-- Top Bar -->
+                    <div class="catalog__top-bar">
+                        <div class="catalog__results">
+                            <span>2,456 products found</span>
+                        </div>
+                        <div class="catalog__sort">
+                            <label for="sort">Sort by:</label>
+                            <select id="sort" class="sort-select">
+                                <option>Popularity</option>
+                                <option>Price: Low to High</option>
+                                <option>Price: High to Low</option>
+                                <option>Newest</option>
+                                <option>Rating</option>
+                            </select>
+                        </div>
+                    </div>
+
+                    <!-- Product Grid -->
+                    <div class="product-grid product-grid--catalog">
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="images/samsung-galaxy-a54.png" alt="Samsung Galaxy A54">
+                            </div>
+                            <div class="product-card__badge">-25%</div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">Samsung Galaxy A54 128GB Smartphone</h3>
+                                <div class="product-card__rating">
+                                    <span class="rating">★★★★☆</span>
+                                    <span class="rating-count">(124)</span>
+                                </div>
+                                <div class="product-card__price">
+                                    <span class="price-current">4,500,000 UZS</span>
+                                    <span class="price-old">6,000,000 UZS</span>
+                                </div>
+                                <div class="product-card__tags">
+                                    <span class="tag tag--delivery">Free delivery</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                    <a href="product.html" class="btn btn--primary btn--small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="images/iphone-15-pro.png" alt="iPhone 15 Pro">
+                            </div>
+                            <div class="product-card__badge badge--new">New</div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">Apple iPhone 15 Pro 256GB</h3>
+                                <div class="product-card__rating">
+                                    <span class="rating">★★★★★</span>
+                                    <span class="rating-count">(89)</span>
+                                </div>
+                                <div class="product-card__price">
+                                    <span class="price-current">18,500,000 UZS</span>
+                                </div>
+                                <div class="product-card__tags">
+                                    <span class="tag tag--installment">from 1,850,000 UZS/mo</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                    <a href="product.html" class="btn btn--primary btn--small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="images/nike-air-max.png" alt="Nike Air Max 270">
+                            </div>
+                            <div class="product-card__badge">-15%</div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">Nike Air Max 270 Running Sneakers</h3>
+                                <div class="product-card__rating">
+                                    <span class="rating">★★★★☆</span>
+                                    <span class="rating-count">(67)</span>
+                                </div>
+                                <div class="product-card__price">
+                                    <span class="price-current">850,000 UZS</span>
+                                    <span class="price-old">1,000,000 UZS</span>
+                                </div>
+                                <div class="product-card__tags">
+                                    <span class="tag tag--delivery">Free delivery</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                    <a href="product.html" class="btn btn--primary btn--small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="images/dyson-v15.png" alt="Dyson V15 Detect">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">Dyson V15 Detect Vacuum Cleaner</h3>
+                                <div class="product-card__rating">
+                                    <span class="rating">★★★★★</span>
+                                    <span class="rating-count">(156)</span>
+                                </div>
+                                <div class="product-card__price">
+                                    <span class="price-current">7,200,000 UZS</span>
+                                </div>
+                                <div class="product-card__tags">
+                                    <span class="tag tag--installment">from 720,000 UZS/mo</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                    <a href="product.html" class="btn btn--primary btn--small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="images/artel-tv.png" alt="Artel Smart TV">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">Artel 55" Smart TV 4K UHD</h3>
+                                <div class="product-card__rating">
+                                    <span class="rating">★★★★☆</span>
+                                    <span class="rating-count">(234)</span>
+                                </div>
+                                <div class="product-card__price">
+                                    <span class="price-current">5,800,000 UZS</span>
+                                </div>
+                                <div class="product-card__tags">
+                                    <span class="tag tag--delivery">Free delivery</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                    <a href="product.html" class="btn btn--primary btn--small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="images/zara-coat.png" alt="Zara Winter Coat">
+                            </div>
+                            <div class="product-card__badge">-30%</div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">Zara Women's Winter Coat</h3>
+                                <div class="product-card__rating">
+                                    <span class="rating">★★★★☆</span>
+                                    <span class="rating-count">(45)</span>
+                                </div>
+                                <div class="product-card__price">
+                                    <span class="price-current">420,000 UZS</span>
+                                    <span class="price-old">600,000 UZS</span>
+                                </div>
+                                <div class="product-card__tags">
+                                    <span class="tag tag--delivery">Free delivery</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                    <a href="product.html" class="btn btn--primary btn--small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="images/tefal-pan.png" alt="Tefal Pan Set">
+                            </div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">Tefal Non-Stick Pan Set 3 Pieces</h3>
+                                <div class="product-card__rating">
+                                    <span class="rating">★★★★★</span>
+                                    <span class="rating-count">(178)</span>
+                                </div>
+                                <div class="product-card__price">
+                                    <span class="price-current">320,000 UZS</span>
+                                </div>
+                                <div class="product-card__tags">
+                                    <span class="tag tag--delivery">Free delivery</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                    <a href="product.html" class="btn btn--primary btn--small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <div class="product-card">
+                            <div class="product-card__image">
+                                <img src="images/loreal-skincare.png" alt="L'Oreal Skincare Set">
+                            </div>
+                            <div class="product-card__badge badge--new">New</div>
+                            <div class="product-card__content">
+                                <h3 class="product-card__title">L'Oreal Paris Complete Skincare Set</h3>
+                                <div class="product-card__rating">
+                                    <span class="rating">★★★★☆</span>
+                                    <span class="rating-count">(92)</span>
+                                </div>
+                                <div class="product-card__price">
+                                    <span class="price-current">180,000 UZS</span>
+                                </div>
+                                <div class="product-card__tags">
+                                    <span class="tag tag--delivery">Free delivery</span>
+                                </div>
+                                <div class="product-card__actions">
+                                    <button class="btn btn--secondary btn--small">Add to Cart</button>
+                                    <a href="product.html" class="btn btn--primary btn--small">View Details</a>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pagination -->
+                    <div class="pagination">
+                        <button class="pagination__btn pagination__btn--disabled">Previous</button>
+                        <button class="pagination__btn pagination__btn--active">1</button>
+                        <button class="pagination__btn">2</button>
+                        <button class="pagination__btn">3</button>
+                        <span class="pagination__dots">...</span>
+                        <button class="pagination__btn">15</button>
+                        <button class="pagination__btn">Next</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+{% endblock %}
